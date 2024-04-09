@@ -1,0 +1,381 @@
+1 Introducci´on
+Las epidemias representan momentos cr´ıticos en la historia de la humanidad,
+puesto que han desafiado nuestra capacidad de respuesta y han establecido puntos sin retorno para la humanidad. Estos eventos llevan a la sociedad a desplegar
+su ingenio y a tomar medidas; llevan al extremo a las personas con el fin de conservar su salud y proteger a sus seres queridos. Por ello, las formas de detectar,
+aislar y prevenir el contagio en la comunidad son esenciales y necesarias para
+cuidar la salud de las personas.
+Este tema es cercano para nosotros por la pandemia de COVID-19 que nos
+mantuvo en aislamiento desde inicios del 2020. Donde cobr´o m´as relevancia este
+tema dado que se buscaba reducir el n´umero de contagios en una situaci´on que
+tom´o a todo el mundo de forma inesperada. A pesar de que algunos sistemas
+dieran el aviso de una posible epidemia, la magnitud de la pandemia nos tom´o
+por sorpresa a la mayor´ıa. Lo que destac´o la necesidad de mejorar los m´etodos
+de predicci´on y respuesta ante posibles emergencias futuras.
+Sin embargo esto no ha sido tema de estudio s´olo por la reciente pandemia,
+pues con eventos pasados se ha buscado una soluci´on que permita prevenir las
+epidemias de todo tipo. Los avances en diferentes campos de la tecnolog´ıa nos
+dan una nueva gama de posibilidades para utilizar los sistemas como herramientas que nos ayuden a prevenir y controlar epidemias.
+Por lo cual, continuamos con la exploraci´on de los sistemas existentes de
+predicci´on y control de epidemias; para identificar elementos clave y aspectos
+por mejorar que nos ayuden a definir una propuesta m´as completa, para poder
+dise˜nar una arquitectura para dicha soluci´on. As´ı mismo, planteamos algunas
+m´etricas que nos servir´an como indicadores para evaluar si nuestro prototipo
+cumple con los objetivos de la propuesta inicial y de la arquitectura.
+1
+2 Estado del Arte
+La humanidad ha enfrentado numerosas epidemias a lo largo de su historia, y
+se han perdido muchas vidas debido a las respuestas tard´ıas ante estos eventos. Sin embargo, desde hace unos a˜nos el avance tecnol´ogico ha permitido la
+b´usqueda de m´etodos para predecir y detectar las epidemias de forma anticipada. De modo que se puedan prevenir situaciones en las que un gran n´umero
+de personas resulte afectado, tal como se vivi´o en la pandemia del 2020 por la
+COVID-19.
+Durante la pandemia de 2020, se da un impulso en la b´usqueda de un sistema para la detecci´on de posibles casos de epidemia con apoyo de Big Data.
+El objetivo era claro, poder predecir, rastrear y detectar las zonas donde se
+pudiese empezar a dar un brote y contagiar a la poblaci´on para proceder a un
+aislamiento y contenci´on del virus. Por medio de m´etodos de detecci´on, que reportaron efectividad mayor al 90% en grupos donde la proporci´on de infectados
+se encontraba debajo del 20% seg´un los autores.
+2.1 Marco te´orico
+Algunos conceptos clave que se deben tener en cuenta para las soluciones tecnol´ogicas en est´a ´area de estudio son:
+• Epidemia
+Es la propagaci´on r´apida y descontrolada de una enfermedad contagiosa en
+determinada poblaci´on, que afecta a un gran n´umero de personas. Ahora
+bien, en caso de que se extienda a otras regiones se cataloga como pandemia.
+• Brote
+Es un concepto usado para llamar la aparici´on de forma repentina de
+alguna enfermedad en alguna zona y momento particular.
+• Inteligencia artificial
+Es una tecnolog´ıa que permite a las m´aquinas simular la inteligencia humana y las capacidades para resolver problemas. Sin embargo, se han
+clasificado en tipos, existe la IA d´ebil, que se enfoca en realizar tareas
+espec´ıficas. Y la IA fuerte, que hasta el momento es s´olo teor´ıa, pero
+busca igualar o incluso superar la inteligencia y las capacidades de los
+seres humanos.
+• Machine Learning
+Es una rama de la inteligencia artificial que usa algoritmos para imitar
+el aprendizaje de los seres humanos por medio de datos estructurados y
+etiquetados. Este se divide en tres partes:
+2
+1. Proceso de decisi´on: con datos de entrada, que pueden o no estar etiquetados se produce una estimaci´on, predicci´on o clasificaci´on
+sobre un patr´on en los datos.
+2. Funci´on de error: eval´ua la predicci´on del modelo, y en caso de
+que exista alg´un ejemplo conocido permite realizar una comparaci´on
+para determinar la precisi´on del modelo.
+3. Proceso de optimizaci´on del modelo: en caso de que el modelo
+se pueda ajustar a los puntos de los datos del modelo conocido se
+realizan los cambios para reducir las diferencias entre dicho modelo
+y la estimaci´on.
+• Deep learning
+Es una rama del machine learning que usa redes neuronales de m´ultiples
+capas para simular la toma de decisiones del cerebro. Permite optimizar
+resultados y obtener mayor precisi´on al momento de identificar, clasificar
+fen´omenos, reconocer patrones y hacer predicciones. Gracias a que elimina parte del procesamiento al tomar datos no estructurados, se vuelve un
+proceso m´as automatizado y menos dependiente de los humanos.
+2.2 Marco de antecedentes
+2.2.1 Google Flu Trends
+En un estudio realizado en 2012, se explor´o el uso de la herramienta de Google
+Trends para apoyarse en las b´usquedas de las personas. Esta herramienta recopila la cantidad de b´usquedas relacionadas con ciertos temas a lo largo del
+tiempo y se propuso como Google Flu Trends. Usando los cambios en las tendencias de b´usqueda de s´ıntomas o enfermedades espec´ıficas junto con los datos
+del Centro de Control y Prevenci´on de Enfermedades de los Estados Unidos (US
+CDC), se buscaba utilizar la herramienta de Google como un apoyo para una
+predicci´on m´as r´apida y efectiva.
+El proyecto FluBreaks ten´ıa como objetivo integrar el poder de internet
+en beneficio de la sociedad. Se compararon los hist´oricos de la CDC contra
+las tendencias en la herramienta de Google del 2001 hasta el 2013. Dando
+como resultado curvas muy similares en los momentos de aparici´on de epidemias
+o brotes en los Estados Unidos. A trav´es de m´etodos estad´ısticos como la
+distribuci´on normal, algoritmos de distribuci´on de Poisson y algoritmos para
+distribuci´on binomial negativa, se intent´o generar predicciones. Aunque los
+resultados no fueron significativos ya que sus resultados eran muy cercanos,
+compartiendo la armon´ıa en sus gr´aficos, entre los de Google y la CDC.
+3
+Figure 1: Se presentan los datos obtenidos por Google Flu Trends y la CDC en
+la parte inferior, las l´ıneas oscuras y gruesas sobre estos gr´aficos presentan el
+tiempo donde se present´o una epidemia. Los dem´as segmentos y l´ıneas presentados muestran las predicciones por medio de diferentes indicadores contemplados
+en el estudio.
+• Algoritmos de Flu Trends
+Para este sistema de detecci´on, unieron diferentes algoritmos que se categorizan en distribuciones de probabilidad. Para la distribuci´on normal se manejaron los algoritmos de EARS (Sistema de Reporte Temprano de Anomal´ıas) con
+CUSUM (Suma acumulativa), HLM (M´etodo de L´ımites Hist´oricos) y HCusum
+(Cusum hist´orico). Todos manejando media y distribuci´on normal.
+EARS maneja 3 eventos de vigilancia de eventos sintom´aticos llamados C1,
+C2 y C3. Usa una variante de CUSUM donde maneja una media m´ovil y la
+desviaci´on est´andar con el fin de estandarizar los datos hist´oricos brindados.
+Cada evento abarca un espacio de tiempo diferente como se muestra en la siguiente imagen:
+Figure 2: Distribuci´on de eventos a entre las semanas de estudio
+El algoritmo es sensible a crecimientos repentinos lo cual permite alertar de
+forma temprana sobre un brote.
+HLM contempla la temporada, a diferencia de CUSUM. Para esto a˜nade una
+identidad con la cual contempla si es o no por temporada, donde s´ı es verdad
+es por la presencia de un brote. Se observa tanto con 3 como con 5 semanas, y
+4
+se compara con las mismas semanas en el hist´orico.
+Figure 3: Visualizaci´on de HLM-3 y HLM-5
+HCusum lo que hace es ajustar CUSUM con las temporadas, de modo que
+ante un crecimiento repentino del n´umero de datos en tendencia no alerta pero
+si avisar´a solamente cuando haya un brote an´omalo. Para esto, dado que junta
+ambos m´etodos anteriormente descritos y ajustar la identidad con la cual verificar el brote.
+Para la distribuci´on Poisson, se usaron POD (M´etodos de brotes Poisson),
+an´alisis puramente temporal de SaTScan y PSC o Poisson CUSUM. Para todas
+se asume que los datos siguen la distribuci´on de Poisson.
+POD revisa la incidencia del n´umero de casos del hist´orico en la tasa de enfermedades. Se maneja usualmente a 10 a˜nos por la variabilidad de condiciones
+y contempla las temporadas del a˜no, por cada una calcula la tasa de incidencia.
+SatScan se usa para an´alisis temporal, espacial o espacio temporal. El espacial ayuda a la detecci´on de brotes, el temporal seg´un si se tiene o no delimitado
+el espacio de d´onde se toman los datos.En este caso ya estaba definido y se
+manejaron ciclos semanales para el estudio.
+PSC parte de 2 hip´otesis, una nula donde el valor actual est´a bajo control y
+una alternativa donde no. Sus valores de referencia son la media de los datos,
+donde para cada una se tomar´a de diferente manera para el c´alculo.
+Para la distribuci´on binomial negativa se usaron los algoritmos de clasifi5
+cador de Naive Bayes con CUSUM y clasificador de Naive Bayes hist´orico.
+Todos los algoritmos fueron utilizados debido a que cumpl´ıan diferentes roles
+o permit´ıan solucionar problemas que presentaban los otros. Como lo ser´ıa la
+alerta temprana, contemplar la existencia de una temporada del a˜no.
+Las m´etricas utilizadas para medir el desempe˜no de este sistema fueron:
+• Porcentaje de verdaderos positivos
+• Porcentaje de falsos positivos
+• Porcentaje de tiempo de solapamiento: Cuando uno de los algoritmos salte
+alerta y coincida en el tiempo en que fue notificado el brote por los datos
+del CDC.
+• Porcentaje de alarmas tempranas
+2.2.2 HiRES y HiRES-p
+Este estudio que tuvo como prueba fuerte el COVID y busc´o apoyarse en las capacidades de Big Data, tuvo que definir modelos matem´aticos para luego pasar
+a la arquitectura del modelo de HiRES y HiRES-p.
+HiRES es un modelo espacio temporal donde se puede ver la trayectoria del
+virus seg´un los contagios persona a persona que se han obtenido en el historial,
+donde la trayectoria es la evoluci´on del n´umero de casos. Seg´un el n´umero de
+d´ıas que se contemplen, ir viendo un mapa de zonas de riesgo de contagio.
+Con esto, luego llega HiRES-p que contempla el riesgo de contagiarse una
+persona en un futuro cercano o ser directamente sospechoso de estar contagiado.
+Esto visto en un intervalo de tiempo y contemplando el tiempo de vida del virus
+en cuesti´on.
+Con esto, se tiene la siguiente arquitectura uniendo estos modelos.
+Figure 4: Explicaci´on del modelo HiRES y HiRES-p
+6
+2.2.3 HealthMap
+Surgi´o en el a˜no 2006 y fue desarrollado por un equipo de investigadores liderado
+por John S. Brownstein y Clark C. Freifeld en el Children’s Hospital de Boston.
+HealthMap es una aplicaci´on en internet que utiliza la inteligencia artificial
+para recopilar y mostrar informaci´on sobre brotes epid´emicos. Esto lo logra
+recopilando datos de fuentes como noticias, informes de redes sociales, sitios
+web de salud p´ublica, informes de vigilancia epidemiol´ogica y alertas oficiales.
+El sistema adquiere datos cada hora y usa miner´ıa de datos para determinar la
+categor´ıa de la enfermedad y la localizaci´on del brote.
+Una vez la informaci´on es categorizada seg´un fuente de informaci´on, enfermedad y ubicaci´on geogr´afica, esta se muestra en un mapa interactivo en tiempo
+real que se encuentra en la p´agina de HealthMap (http://healthmap.org). Donde
+cualquier persona con acceso a internet puede ingresar y consultar las alertas,
+las cuales se geolocalizan a escala de pa´ıs, con niveles de resoluci´on a escala
+estatal, provincial o municipal para algunos pa´ıses.
+Para esto se clasifican los informes de acuerdo a las ubicaciones, enfermedades y cualquier factor ´util relacionado con los brotes por medio de las
+palabras o frases de cada uno de estos informes. Adem´as de acuerdo a estos
+factores se personaliza la vista del usuario de forma intuitiva y f´acil de usar. Por
+ende, debe ser escalable para que a medida que se tienen m´as fuentes e informes,
+el sistema sea capaz de procesarlos r´apidamente sin afectar su rendimiento.
+Dicho sistema se compone de 5 m´odulos:
+1. Motor de adquisici´on de datos
+2. Motor de clasificaci´on
+3. Base de datos
+4. Backend web
+5. Frontend web
+Entonces, el sistema recopila alertas, las clasifica de acuerdo a los campos
+mencionados anteriormente, los almacena en una base de datos y luego procede
+para mostrar dicha informaci´on al usuario.
+7
+Figure 5: Sistema de HealthMap
+2.2.4 CORD-19
+Con la intenci´on de contribuir en la lucha contra la Covid-19 AWS lanz´on un
+motor de b´usqueda, basado en ML, llamado CORD-19 (COVID-19 Open Research Dataset) para que ayude a los investigadores a encontrar documentos
+relevantes sobre el coronavirus utilizando preguntas en lenguaje natural. Esta
+soluci´on ofrece una interfaz de b´usqueda sencilla en la que los investigadores
+pueden realizar consultas utilizando lenguaje natural y producir respuestas detalladas, as´ı como documentaci´on fuente.
+En primer lugar, la herramienta PNL se utiliza para enriquecer el conjunto
+de datos y el m´etodo ML se utiliza para extraer informaci´on de salud pertinente
+a partir de datos de texto no estructurados sobre enfermedades, tratamientos e
+informaci´on relacionada. Luego, la informaci´on relevante se asigna a modelos
+m´edicos de COVID-19 mediante procedimientos de inferencia y clasificaci´on
+multinivel, que involucran diferentes fuentes de enriquecimiento, y se indexa en
+Amazon Kendra, que es una disposici´on de b´usqueda precisa basada en enfoques
+de aprendizaje autom´atico y aprendizaje a distancia.
+8
+Figure 6: Arquitectura de CORD-19
+2.2.5 Otros proyectos
+Sistemas como Metabiota y BlueDot dieron un aviso sobre la expansi´on de un
+brote, que fue el que result´o en la pandemia del 2020. Sin embargo, su alerta
+no fue suficiente para anticipar de manera satisfactoria dicho brote y result´o
+cobrando la vida de muchas personas. Y como estos hay varios proyectos que
+intentan anticipar la posible llegada de una epidemia. BlueDot se basa en tres
+componentes clave: identificar amenazas tempranamente, evaluar r´apidamente
+sus riesgos y trayectorias probables, y ayudar a las organizaciones a convertir
+estos conocimientos en acciones r´apidas.
+La plataforma de inteligencia de BlueDot combina la capacidad de una computadora para comprender el lenguaje humano, conocida como comprensi´on
+del lenguaje natural (NLU), y el aprendizaje autom´atico, una forma de IA que
+imita la capacidad de los humanos para aprender y volverse gradualmente m´as
+precisa. La plataforma clasifica vol´umenes masivos de informaci´on en l´ınea,
+desde informes de noticias, sitios de redes sociales, sitios web gubernamentales
+y m´as, de todo el mundo, en m´as de 130 idiomas, cada 15 minutos de cada d´ıa.
+Adem´as los informes de inteligencia son escritos por expertos internos que desentra˜nan tendencias de las enfermedades infecciosas, proporcionan informaci´on
+detallada sobre los acontecimientos emergentes y comparten previsiones sobre
+enfermedades infecciosas. Combinando as´ı la tecnolog´ıa con los conocimientos
+humanos.
+9
+Figure 7: BlueDot
+Adem´as de estos sistemas, existen proyectos como el europeo EPIFOR, que
+combina diferentes disciplinas para recopilar datos de m´ultiples epidemias a
+lo largo de la historia, para controlar la transmisi´on de enfermedades y poder
+mejorar las estrategias de intervenci´on. Hasta el momento ha mostrado resultados prometedores al proporcionar patrones ´utiles sobre la propagaci´on de
+enfermedades en el futuro. Otro ejemplo es el modelo ruso que busca predecir
+la evoluci´on de una epidemia.
+A nivel mundial, varios pa´ıses tienen iniciativas de vigilancia epidemiol´ogica,
+con las cuales buscan monitorear y responder de manera efectiva a la presencia de enfermedades y brotes. Sin embargo, existen desaf´ıos y disparidad en la
+implementaci´on de estas tecnolog´ıas en algunas regiones, especialmente en las
+regiones m´as pobres, donde los sistemas de salud son d´ebiles e ineficientes, lo
+que genera una dificultad en la detecci´on temprana, manejo y prevenci´on de
+brotes.
+Centr´andonos en Am´erica, podemos encontrar organizaciones especializadas
+en recolectar datos relacionados con epimediolog´ıa, tales como Organizaci´on
+Panamericana de la Salud (OPS), cuyo principal objetivo es mejorar las condiciones de salud en la regi´on. Dentro de las enfermedades que monitorea se
+encuentran chicungu˜na, malaria, zika y leishmaniasis.
+La siguiente tabla es una actualizaci´on epidemiol´ogica para dengue, chikungu˜na
+y zika entre los a˜nos 2010 y 2022:
+10
+Figure 8: Dengue, chikungu˜na y zika entre 2010 y 2022
+3 Propuesta
+Para ser una alternativa en este mercado emergente de sistemas de detecci´on
+temprana de epidemias proponemos desarrollar un sistema basado en machine
+learning que nos permita realizar una predicci´on precisa de posibles virus y
+proveer una interfaz amigable para visualizar las alertas y predicciones. Buscamos utilizar modelos de predicci´on basados en datos hist´oricos de epidemias
+pasadas.
+Fuera de los datos recopilados de epidemias, esperamos recopilar informaci´on
+en tiempo real por medio de las bases de datos de los sistemas de salud, noticias, fen´omenos ambientales, brotes, entre otros factores que puedan influir en la
+propagaci´on de cualquier epidemia. Por medio de los cuales se buscar´a teniendo
+en cuenta la zona geogr´afica, los s´ıntomas o las enfermedades del momento, entre otros.
+Estos modelos analizar´an patrones en los datos que permitan identificar
+se˜nales tempranas de un brote para poder generar alertas y empezar a tomar
+medidas para evitar da˜nos mayores.
+El proceso se distribuir´ıa en las fases de:
+• Recolecci´on de datos
+• Limpieza de datos
+• Dise˜no del modelo
+• Entrenamiento y validaci´on del modelo
+• Desarrollo frontend
+• Despliegue en nube
+11
+3.1 Arquitectura
+La arquitectura dise˜nada para esta propuesta es la siguiente:
+Figure 9: Arquitectura de la propuesta
+Desde el navegador web de un usuario se visualiza la interfaz con la informaci´on de las alertas y las predicciones que se encontrar´a desplegada en una
+primera instancia de EC2. Las solicitudes sobre dicha interfaz ser´an enviadas a
+la API Gateway que ser´a quien establece la comunicaci´on con nuestra segunda
+instancia de EC2 que contiene la l´ogica del backend.
+Las solicitudes son procesadas y manejadas por el modelo-core-mngr que
+obtiene los resultados de las predicciones por medio del ejecutable del modelo
+predictivo, que es una versi´on del modelo ya entrenado y de r´apido acceso. El
+mngr le env´ıa la respuesta al API Gateway y este transmite la respuesta a la
+interfaz del usuario.
+El modelo se entrena con la informaci´on almacenada en la base de datos,
+cuyo contenido ya estar´a limpio y listo para el entrenamiento del modelo.
+3.2 Planificaci´on del prototipo
+Para el alcance de este proyecto, se manejar´a a nivel Colombia y en particular en
+la ciudad de Bogot´a. Para eso, se trabajar´a con datos simulados enfoc´andonos
+en las primeras fases que se centran en el modelo de machine learning.
+12
+Figure 10: Alcance del prototipo
+3.2.1 M´etricas
+Para evaluar el desempe˜no del modelo se contemplar´an m´etricas que permitan
+comparar los datos de nuestra predicci´on con datos de referencia etiquetados.
+Dichas medidas se obtendr´an por medio de la matriz de confusi´on.
+• Precisi´on: Porcentaje de verdaderos positivos entre todos los positivos.
+P reicion´ =
+PT P
+PT P + F P
+• Exactitud: Porcentaje de aciertos entre todos los datos.
+Exactitud =
+PT P + T N
+PT P + F P + T N + F N
+• Especificidad: Porcentaje de casos negativos clasificados correctamente.
+Especif icidad =
+PT N
+PT N + F P
+• Sensibilidad: Porcentaje de casos positivos clasificados correctamente.
+Sensibilidad =
+PT P
+PT P + F N
+4 Conclusiones
+• La detecci´on temprana de epidemias es crucial para prevenir da˜nos mayores en la sociedad, tanto en temas de la salud de las personas como en
+posibles afectaciones econ´omicas.
+• Soluciones de este tipo pueden aplicarse en cualquier parte del mundo y
+traen un beneficio a la sociedad de alto impacto, favoreciendo la calidad
+de vida de las personas.
+13
+• Hay diversos proyectos que buscan tratar esta problem´atica pero se sigue
+en la b´usqueda de modelos m´as precisos que se puedan anteponer frente
+a estas situaciones.
+• Los datos utilizados en el sistema basado en machine learning son fundamentales, por ende se requiere de la mayor cantidad de informaci´on
+confiable posible para obtener resultados efectivos que permitan dar una
+se˜nal de alerta oportuna para tomar medidas preventivas.
+• La recopilaci´on de informaci´on en tiempo real por medio de bases de datos
+de los sistemas de salud, noticias, condiciones ambientales, adem´as de los
+datos de los hist´oricos de epidemias recientes y antiguas, permiten nutrir
+el modelo para que la identificaci´on de patrones sea m´as efectiva.
+• La selecci´on de m´etricas para los modelos predictivos tiene un papel fundamental en la evaluaci´on de rendimiento e identificaci´on de ´areas de mejora
+de los modelos.
+• Dentro de las soluciones existentes se presenta la integraci´on de datos de
+diversas fuentes, tanto privadas como p´ublicas, con la finalidad de obtener
+un panorama completo de la situaci´on epidemiol´ogica.
+• Aprovechar el desarrollo de soluciones con sistemas basados en machine
+learning o deep learning es muy importante para este tipo de problemas
+donde la capacidad de an´alisis y predicci´on puede ser compleja para el ser
+humano.
+• Al tener un despliegue del servicio en AWS, se brinda una mayor disponibilidad del servicio a los usuarios y una conexi´on al mismo desde cualquier
+lugar donde se requiera.
+• El uso de Docker brinda portabilidad a la soluci´on, evitando depender de
+un proveedor de nube en particular.
+• Al manejar dos instancias de EC2 nos permite asegurar el atributo de
+calidad de escalabilidad, ya que a futuro se podr´ıa llegar a escalar verticalmente u horizontalmente.
+• Al manejar dos instancias diferentes para el backend y el frontend se asegura la flexibilidad, dado que se pueden realizar modificaciones en cada
+servicio sin afectar directamente el rendimiento de los dem´as componentes.
+• Al separar en componentes la arquitectura del sistema de predicci´on ser´ıa
+m´as f´acil de mantener.
+References
+[1] Pervaiz F, Pervaiz M, Abdur Rehman N, Saif U. (4 de octubre del 2012).
+FluBreaks: Early Epidemic Detection from Google Flu Trends. Recuperado
+de: https://doi.org/10.2196/jmir.2102
+14
+[2] Chuansai Zhou, Wen Yuan, Jun Wang, Haiyong Xu, Yong Jiang, Xinmin Wang, Qiuzi Han Wen, Pingwen Zhang. (2 de abril del 2020). Detecting Suspected Epidemic Cases Using Trajectory Big Data. Recuperado de:
+https://doi.org/10.48550/arXiv.2004.00908
+[3] Instituto Nacional de Salud. (18 de mayo del 2022). Protocolo de
+Vigilancia de Infecci´on Respiratoria Aguda (IRA). Recuperado de:
+https://www.ins.gov.co/buscador-eventos/Lineamientos/PRO IRA.pdf
+[4] Kass-Hout. T, Snively. B (20 abril del 2020). AWS launches machine
+learning enabled search capabilities for COVID-19 dataset. Recuperado
+de: https://aws.amazon.com/es/blogs/publicsector/aws-launches-machinelearning-enabled-search-capabilities-covid-19-dataset/
+[5] Rahman MM, Khatun F, Uzzaman A, Sami SI, Bhuiyan MA-A, Kiong
+TS. A Comprehensive Study of Artificial Intelligence and Machine Learning Approaches in Confronting the Coronavirus (COVID-19) Pandemic. International Journal of Health Services. 2021;51(4):446-461. Recuperado de:
+https://journals.sagepub.com/doi/full/10.1177/00207314211017469
+[6] Roche. (15 de febrero del 2021). Inteligencia Artificial ¿para predecir y evitar epidemias?. Recuperado de:
+https://www.rocheplus.es/innovacion/inteligencia-artificial/ia-contrapandemias.html
+[7] Allam Z, Dey G, Jones d. (13 de abril del 2020). Artificial Intelligence
+(AI) Provided Early Detection of the Coronavirus (COVID-19) in China and
+Will Influence Future Urban Health Policy Internationally. Recuperado de:
+https://www.mdpi.com/2673-2688/1/2/9
+[8] PLISA. (16 de febrero de 2024). Bolet´ın Arbovirosis 2022. Recuperado de: https://www3.paho.org/data/index.php/es/temas/indicadoresdengue/boletin-anual-arbovirosis-2022.html
+[9] IBM. (s.f.). What is artificial intelligence (AI)? Recuperado de:
+https://www.ibm.com/topics/artificial-intelligence
+[10] IBM. (s.f.). What is machine learning (ML)? Recuperado de:
+https://www.ibm.com/topics/machine-learning
+[11] IBM. (s.f.). What is deep learning? Recuperado de:
+https://www.ibm.com/topics/deep-learning
+[12] M´edicos sin fronteras. (s.f.). Epidemias. Recuperado de:
+https://www.msf.es/contexto/epidemias
+[13] Pulido, S. (12 de marzo del 2020). ¿Cu´al es la diferencia entre brote, epidemia y pandemia? Recuperado de:
+https://gacetamedica.com/investigacion/cual-es-la-diferencia-entre-broteepidemia-y-pandemia/
+[14] Narkhede, S. (9 de mayo del 2018). Understanding Confusion Matrix.
+Recuperado de: https://towardsdatascience.com/understanding-confusionmatrix-a9ad42dcfd62
+15
+[15] BlueDot. (s.f.). BlueDot’s infectious disease intelligence. Recuperado de:
+https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW1hwJx
+[16] Miragenews.com. (s.f.). BlueDot Utilizes AI to Predict Next Pandemic.
+Recuperado de: https://www.miragenews.com/bluedot-utilizes-ai-to-predictnext-pandemic-1066020/
+[17] Clark, C. Kenneth, D. Ben, Y. John, S. (1 de marzo del 2008).
+HealthMap: Global Infectious Disease Monitoring through Automated Classification and Visualization of Internet Media Reports. Recuperado de:
+https://academic.oup.com/jamia/article/15/2/150/707275
+[18] DeepChecks. Sensitivity and Specificity of Machine Learning. Recuperado
+de: https://deepchecks.com/glossary/sensitivity-and-specificity-of-machinelearning/
+[19] Kumar, A. (27 de septiembre de 2018) ML Metrics: Sensitivity vs. Specificity. Recuperado de: https://dzone.com/articles/ml-metrics-sensitivity-vsspecificity-difference
+[20] Ragan, A. (10 de octubre del 2018). Taking the Confusion Out of Confusion Matrices. Recuperado de: https://towardsdatascience.com/taking-theconfusion-out-of-confusion-matrices-c1ce054b3d3e

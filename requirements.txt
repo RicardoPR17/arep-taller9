@@ -1,0 +1,12 @@
+jupyterlab
+openai
+tiktoken
+langchain~=0.1.14
+openai
+chromadb
+langchainhub
+bs4~=0.0.2
+langchain-pinecone
+langchain-openai
+langchain_community
+beautifulsoup4~=4.12.3
