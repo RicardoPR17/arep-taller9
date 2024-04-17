@@ -1,12 +1,11 @@
 jupyterlab
 openai
 tiktoken
-langchain~=0.1.14
+langchain
 openai
 chromadb
 langchainhub
-bs4~=0.0.2
+bs4
+pinecone-client
 langchain-pinecone
-langchain-openai
-langchain_community
-beautifulsoup4~=4.12.3
+langchain-community
